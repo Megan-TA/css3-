@@ -265,7 +265,12 @@
           background-color: inherit;
           transform-origin: left;
           transform:rotate(.1turn);    /*圈数 1turn=360deg;*/
+          border-radius: 0 200px 200px 0;
 	   }
+	    .pie:hover:before{
+	    	transition:  all 2s;
+	    	transform: rotate(0.5turn);
+	    }
 	   .pie h1{
 	   	  z-index: 99;
 	   	  position: relative;
@@ -319,10 +324,9 @@
         transform: rotate(-30deg);
 	 }
 	 /*下划线*/
-	 .underline{
+	.underline{
 	 	width: 400px;
 	    height:200px;
-		padding:40px;
 		position: relative;
         margin:0 auto;
         text-align: center;
@@ -331,11 +335,146 @@
         background:#00aabb;
         border-radius:.5em;	
 	 }
-	  .underline1-ajkps,.underline2-ajkps,.underline3-ajkps{
-          cursor:pointer;
-          position: absolute;
-          left:16%;
-          text-shadow: .1em 0 #00aabb, -.1em 0 #00aabb;
-          transition:1s;
-       }
+	.underline1-ajkps,.underline2-ajkps,.underline3-ajkps{
+        cursor:pointer;
+        position: absolute;
+        left:16%;
+        text-shadow: .1em 0 #00aabb, -.1em 0 #00aabb;
+        transition:1s;
+    }
+    .underline1-ajkps{
+        top:10%;
+        background: linear-gradient(white, white) no-repeat;
+        background-size: 100% 1px;
+        background-position: -10em 1.15em;
+    }
+    .underline2-ajkps{
+        top:38%;
+        background:
+        linear-gradient(90deg,white 50%, transparent 0) repeat-x;
+        background-size: .2em 2px;
+        background-position: 0 32px;
+    }
+    .underline2-ajkps:hover{
+        background-position: -30px 32px;
+    }
+    .underline3-ajkps{
+          top:66%;
+          background:
+            linear-gradient(-45deg, transparent 40%, white 0, white 60%, transparent 0) 0 1em,
+            linear-gradient(45deg, transparent 40%, white 0, white 60%, transparent 0) .1em 1em;
+          background-repeat: repeat-x;
+          background-size: .25em .2em;
+          background-position: -3em 1.25em;
+    }
+    .underline3-ajkps:hover{
+       background:
+         linear-gradient(-45deg, transparent 40%, deeppink 0, deeppink 60%, transparent 0) 0 1em,
+         linear-gradient(45deg, transparent 40%, deeppink 0, deeppink 60%, transparent 0) .1em 1em;
+       background-repeat: repeat-x;
+       background-size: .25em .2em;
+       background-position: 0 1.25em;
+    }
+    /*背景变暗*/
+    .spectiveBlur{
+    	width: 400px;
+	    line-height: 200px;
+		position: relative;
+        margin:0 auto;
+        text-align: center;
+        color: white;
+        font-size: 18px;
+        background:#E91E63;
+        transition:  0.2s;
+    }
+    .spectiveBlur:hover{
+    	box-shadow: 0 0 0 1920px rgba(0,0,0,0.7);
+    	transform: translate(0,-50%) scale(1.5);
+    }
+    /*条纹背景图*/
+    .stripe{
+    	width: 200px;
+	    line-height: 200px;
+		position: relative;
+        margin:0 auto;
+        text-align: center;
+        color: white;
+        font-size: 18px;
+        border-radius: 0.5em;
+        z-index: -1;
+        background: repeating-linear-gradient(45deg,#cc9999,#cc9999 15px,#ccc 0,#ccc 30px);
+        /*  repeating-linear-gradient(deg\origin,color-start,px,color-end,0,px)  */
+    }
+    /*条纹背景图2*/
+    .wave-stripe{
+          margin:0 auto;
+          width: 200px;
+          line-height:200px;
+          text-align: center;
+          color: #333;
+          font-size: 18px;
+          border-radius:.5em;
+          background:
+						linear-gradient(135deg, deeppink 25%, transparent 25%),
+						linear-gradient(225deg, deeppink 25%, transparent 25%),
+						linear-gradient(315deg, deeppink 25%, transparent 25%),
+						linear-gradient(45deg, deeppink 25%, transparent 25%);
+          background-size: 40px 40px;
+    }
+    .wave-stripe:hover{
+    	transition: all 1s;
+    	background-size: 20px 20px;
+    }
+    /*条纹背景图3*/
+   .arrow-stripe{
+		margin:0 auto;
+		width: 200px;
+		line-height:200px;
+		text-align: center;
+		color: #333;
+		font-size: 18px;
+		border-radius:.5em;
+		background:
+		           linear-gradient(45deg, #92baac 45px, transparent 45px)64px 64px,
+                   linear-gradient(45deg, #92baac 45px, transparent 45px,transparent 91px, #e1ebbd 91px, #e1ebbd 135px, transparent 135px),
+                   linear-gradient(-45deg, #92baac 23px, transparent 23px, transparent 68px,#92baac 68px,#92baac 113px,transparent 113px,transparent 158px,#92baac 158px);
+		background-size: 128px 128px;
+		background-color:#e1ebbd;
+   }
+   /*条纹背景图4*/
+   .colorful-stripe{
+   	    margin:0 auto;
+		width: 400px;
+		line-height:200px;
+		text-align: center;
+		color: #333;
+		font-size: 12px;
+		border-radius:.5em;
+		background:
+		           linear-gradient(limegreen, transparent), 
+		           linear-gradient(90deg, skyblue, transparent),
+		           linear-gradient(-90deg, coral, transparent);
+		background-blend-mode: screen;      /*混合模式*/
+   }
+/*	background-blend-mode: normal;          //正常
+	background-blend-mode: multiply;        //正片叠底
+	background-blend-mode: screen;          //滤色
+	background-blend-mode: overlay;         //叠加
+	background-blend-mode: darken;          //变暗
+	background-blend-mode: lighten;         //变亮
+	background-blend-mode: color-dodge;     //颜色减淡
+	background-blend-mode: color-burn;      //颜色加深
+	background-blend-mode: hard-light;      //强光
+	background-blend-mode: soft-light;      //柔光
+	background-blend-mode: difference;      //差值
+	background-blend-mode: exclusion;       //排除
+	background-blend-mode: hue;             //色相
+	background-blend-mode: saturation;      //饱和度
+	background-blend-mode: color;           //颜色
+	background-blend-mode: luminosity;      //亮度
+	
+	background-blend-mode: initial;         //初始
+	background-blend-mode: inherit;         //继承
+	background-blend-mode: unset;           //复原*/
+     
 
