@@ -167,22 +167,28 @@
      <hr>
 
      <section>
-       <summary>双飞翼布局</summary>
+       <summary>圣杯布局</summary>
        <summary>说明：左右两列固定宽度，中间高度自适应</summary>
-       <h3>第一种</h3>
        <hgroup class="wingBox">
          <div class="wingLeft">左侧固定200px的content</div>
          <div class="wingMain">中间</div>
          <div class="wingRight">右侧固定200px的content</div>
        </hgroup>
        <hr>
-       <h3>第二种</h3>
-       <hgroup class="wingBox-two">
-          <div class="wingMain-two">中间</div>
+     </section>
+
+     <section>
+        <summary>双飞翼布局</summary>
+        <summary>说明：左右两列固定宽度，中间高度自适应（<strong>相比较圣杯，双飞翼中间多了一个div</strong>）</summary>
+        <hgroup class="wingBox-two">
+          <div class="wingMain-two">
+            <div class='wingMain-innerBox'>我是双飞翼布局中间部分</div>
+          </div>
           <div class="wingLeft-two">左侧固定200px的content</div>
           <div class="wingRight-two">右侧固定200px的content</div>
         </hgroup>
-     </section>
+        <hr>
+      </section>
      
 </body>
 </html>
